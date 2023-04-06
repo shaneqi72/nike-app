@@ -1,19 +1,25 @@
-import { FlatList, Image, StyleSheet, View } from 'react-native';
+import { FlatList, Image, Pressable, StyleSheet, View } from 'react-native';
 import products from '../data/products';
 
-const ProductsScreen = () => {
+const ProductsScreen = ({ navigation }) => {
+  const navigateToProductDetail = () => {
+    navigation.navigate('Product Details');
+  };
+
   return (
     <FlatList
       data={products}
       renderItem={({ item }) => (
         <View style={styles.itemContainer}>
-          <Image
-            source={{
-              uri: item.image,
-            }}
-            // aspectRatio makes the image height as same as width
-            style={styles.image}
-          />
+          <Pressable onPress={navigateToProductDetail}>
+            <Image
+              source={{
+                uri: item.image,
+              }}
+              // aspectRatio makes the image height as same as width
+              style={styles.image}
+            />
+          </Pressable>
         </View>
       )}
       numColumns={2}
