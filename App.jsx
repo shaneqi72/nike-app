@@ -2,11 +2,18 @@ import { StatusBar } from 'expo-status-bar';
 import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
 import Navigation from './src/Navigation';
 
+import { Provider } from 'react-redux';
+import { store } from './store';
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Navigation />
-    </View>
+    <Provider store={store}>
+      <View style={styles.container}>
+        <Navigation />
+
+        <StatusBar style="auto" />
+      </View>
+    </Provider>
   );
 }
 
