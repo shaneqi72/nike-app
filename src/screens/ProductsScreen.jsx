@@ -3,7 +3,7 @@ import { FlatList, Image, Pressable, StyleSheet, View } from 'react-native';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { productsSlice } from '../../store/productsSlide';
+import { productsSlice } from '../../store/productsSlice';
 
 const ProductsScreen = ({ navigation }) => {
   const dispatch = useDispatch();

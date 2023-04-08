@@ -8,11 +8,9 @@ import { store } from './store';
 export default function App() {
   return (
     <Provider store={store}>
-      <View style={styles.container}>
-        <Navigation />
+      <Navigation />
 
-        <StatusBar style="auto" />
-      </View>
+      <StatusBar style="auto" />
     </Provider>
   );
 }
